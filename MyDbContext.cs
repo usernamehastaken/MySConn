@@ -61,7 +61,7 @@ namespace MySConn
         #endregion
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            string sql = "Server=10.1.5.61;Port=3306;User=chenxinxin;Password=123456;Database=revit_cal";
+            string sql = "Server=localhost;Port=3306;User=root;Password=123456;Database=revit_cal";
             optionsBuilder.UseMySQL(sql);
         }
 

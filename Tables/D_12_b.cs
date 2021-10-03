@@ -16,7 +16,12 @@ namespace MySConn.Tables
         public int id { get; set; }
         public double get_distance(D_12_b d)
         {
-            return Math.Sqrt(Math.Pow(d.F1_F3 - this.F1_F3, 2) + Math.Pow(d.V3_V2 - this.V3_V2, 2))*(this.F1_F3-d.F1_F3);
+            int flag = -1;
+            if (this.F1_F3 > d.F1_F3)
+            {
+                flag = 1;
+            }
+            return Math.Sqrt(Math.Pow(d.F1_F3 - this.F1_F3, 2) + Math.Pow(d.V3_V2 - this.V3_V2, 2))*flag;
         }
     }
 }
