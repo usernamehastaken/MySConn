@@ -61,7 +61,7 @@ namespace MySConn
         #endregion
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            string sql = "Server=10.1.5.61;Port=3306;User=chenxinxin;Password=123456;Database=revit_cal";
+            string sql = "Server=localhost;Port=3306;User=root;Password=123456;Database=revit_cal";
             optionsBuilder.UseMySQL(sql);
         }
 
@@ -69,14 +69,36 @@ namespace MySConn
         {
             base.OnModelCreating(modelBuilder);
         }
-    }
 
-    public static class Cal_get_InterValue
-    {
-        public static string get_fromSortList(SortedList<double,double> slist)
+        public double get_ksai_easyway(List<double> keys, List<double> values)
         {
-            return slist.Keys[0].ToString() + ">" + slist.Values[0].ToString() + ">>>" + slist.Keys[1].ToString() + ">" + slist.Values[1].ToString();
+            List<double> tmpkeys = new List<double>();
+            keys.ForEach(v => tmpkeys.Add(v));
+            tmpkeys.Sort();
+            double minkeys = tmpkeys[0];
+            List<int> indexs = new List<int>();
+            for (int i = 0; i < keys.Count; i++)
+            {
+                if (keys[i] == minkeys)
+                {
+                    indexs.Add(i);
+                }
+            }
+            double ksai_sum = 0;
+            foreach (int i in indexs)
+            {
+                ksai_sum = ksai_sum + values[i];
+            }
+            return ksai_sum / indexs.Count;
         }
     }
+
+    //public static class Cal_get_InterValue
+    //{
+    //    public static string get_fromSortList(SortedList<double,double> slist)
+    //    {
+    //        return slist.Keys[0].ToString() + ">" + slist.Values[0].ToString() + ">>>" + slist.Keys[1].ToString() + ">" + slist.Values[1].ToString();
+    //    }
+    //}
 
 }
