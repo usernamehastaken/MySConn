@@ -15,7 +15,7 @@ namespace MySConn
         //定义数据库表格
         #region 
         //public int MyProperty { get; set; }
-        public DbSet<A_1> a_1 { get; set; }
+        public DbSet<A_1> a_1 { get; set; } //每一个dbset是一张表格
         public DbSet<A_2> a_2 { get; set; }
         public DbSet<A_3> a_3 { get; set; }
         public DbSet<A_4> a_4 { get; set; }
@@ -61,7 +61,7 @@ namespace MySConn
         #endregion
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            string sql = "Server=localhost;Port=3306;User=root;Password=123456;Database=revit_cal";
+            string sql = "Server=10.1.5.61;Port=3306;User=chenxinxin;Password=123456;Database=revit_cal";
             optionsBuilder.UseMySQL(sql);
         }
 
@@ -70,18 +70,18 @@ namespace MySConn
             base.OnModelCreating(modelBuilder);
         }
 
-        public double get_ksai_easyway(List<double> keys, List<double> values)
+        public double get_ksai_easyway(List<double> keys, List<double> values)//keys保存每条记录的get_distance数值，values保存ksai数值
         {
             List<double> tmpkeys = new List<double>();
             keys.ForEach(v => tmpkeys.Add(v));
-            tmpkeys.Sort();
-            double minkeys = tmpkeys[0];
+            tmpkeys.Sort();//sort 会改变顺序
+            double minkeys = tmpkeys[0];//保存最近距离值，排序可以重复
             List<int> indexs = new List<int>();
             for (int i = 0; i < keys.Count; i++)
             {
                 if (keys[i] == minkeys)
                 {
-                    indexs.Add(i);
+                    indexs.Add(i);//index保存所有相同距离数值,有则返回平均值，无则返回最小值
                 }
             }
             double ksai_sum = 0;

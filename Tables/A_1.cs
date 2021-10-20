@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MySConn.Tables
 {
-    public class A_1
+    public class A_1 //每个类是一条记录
     {
         //[Key]
         //[Column()]
