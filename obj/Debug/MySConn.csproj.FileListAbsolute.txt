@@ -1,7 +1,6 @@
 C:\Users\chenxinxin.TCDRILAN\source\repos\MySConn\bin\Debug\MySConn.dll.config
 C:\Users\chenxinxin.TCDRILAN\source\repos\MySConn\bin\Debug\MySConn.dll
 C:\Users\chenxinxin.TCDRILAN\source\repos\MySConn\bin\Debug\MySConn.pdb
-C:\Users\chenxinxin.TCDRILAN\source\repos\MySConn\obj\Debug\MySConn.csprojAssemblyReference.cache
 C:\Users\chenxinxin.TCDRILAN\source\repos\MySConn\obj\Debug\MySConn.csproj.CoreCompileInputs.cache
 C:\Users\chenxinxin.TCDRILAN\source\repos\MySConn\obj\Debug\MySConn.dll
 C:\Users\chenxinxin.TCDRILAN\source\repos\MySConn\obj\Debug\MySConn.pdb
@@ -85,3 +84,4 @@ C:\Users\C\source\repos\MySConn\obj\Debug\MySConn.csprojAssemblyReference.cache
 C:\Users\C\source\repos\MySConn\obj\Debug\MySConn.csproj.CoreCompileInputs.cache
 C:\Users\C\source\repos\MySConn\obj\Debug\MySConn.dll
 C:\Users\C\source\repos\MySConn\obj\Debug\MySConn.pdb
+C:\Users\chenxinxin.TCDRILAN\source\repos\MySConn\obj\Debug\MySConn.csprojAssemblyReference.cache
